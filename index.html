@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>الجزائر الخضراء — خضراء بإذن الله</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0B8A3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🌿</div>
+      <div>
+        <div class="app-title">الجزائر الخضراء</div>
+        <div class="app-sub">خُضراءٌ بإذن الله — غرس 58 ولاية</div>
+      </div>
+    </div>
+    <div class="controls">
+      <button id="toggleTheme" class="btn ghost">وضع ليلي/نهاري</button>
+      <button id="resetBtn" class="btn ghost">إعادة التقدّم</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="stats">
+        <div>المغروسات: <span id="countDone">0</span> / 58</div>
+        <div class="progressbar">
+          <div id="progressFill" style="width:0%"></div>
+        </div>
+      </div>
+
+      <div class="map-wrap" id="mapWrap" aria-live="polite">
+        <!-- تولد العناصر بواسطة JS -->
+      </div>
+
+      <div class="footer-note">اضغط على أي ولاية لزرع شجرة — كل ولاية تُصبح خضراء وتعرض: <strong>خضراء بإذن الله</strong></div>
+    </section>
+  </main>
+
+  <!-- Overlay message -->
+  <div id="overlay" class="overlay" role="status" aria-hidden="true">
+    <div class="overlay-card">
+      <h2 id="overlayTitle">🌿 خضراء بإذن الله 🌿</h2>
+      <p id="overlayDesc"></p>
+      <button id="overlayClose" class="btn">حسناً</button>
+    </div>
+  </div>
+
+  <audio id="sfx" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
