@@ -1,0 +1,42 @@
+:root{
+  --bg:#071127; --card:#0f2038; --accent:#0B8A3E; --muted:#9fb3d9; --glass: rgba(255,255,255,0.04);
+  --light-bg: #f4fbf5; --dark-text:#071127;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, "Tajawal",system-ui,Segoe UI,Roboto,"Noto Sans",sans-serif;background:linear-gradient(180deg,var(--bg),#020617);color:#eef6ff}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:rgba(255,255,255,0.02);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(180deg,var(--accent),#0ea84b);display:flex;align-items:center;justify-content:center;font-size:22px}
+.app-title{font-weight:800;font-size:18px}
+.app-sub{font-size:12px;color:var(--muted)}
+.controls{display:flex;gap:8px}
+.btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;border:0;cursor:pointer;font-weight:700}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--muted)}
+main{max-width:1100px;margin:18px auto;padding:14px}
+.panel{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+.stats{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.progressbar{height:10px;background:rgba(255,255,255,0.03);border-radius:8px;overflow:hidden}
+#progressFill{height:100%;background:linear-gradient(90deg,var(--accent),#1edc6a)}
+.map-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.tile{background:rgba(255,255,255,0.02);border-radius:10px;padding:10px;min-height:80px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;cursor:pointer;border:1px solid rgba(255,255,255,0.03);transition:transform .18s,box-shadow .18s}
+.tile:hover{transform:translateY(-6px);box-shadow:0 8px 30px rgba(0,122,255,0.08)}
+.tile.done{background:linear-gradient(180deg,rgba(11,138,62,0.14),rgba(11,138,62,0.1));border-color:rgba(11,138,62,0.6)}
+.tile .name{font-weight:800}
+.tile .meta{font-size:12px;color:var(--muted);margin-top:6px}
+.footer-note{margin-top:14px;color:var(--muted);font-size:13px;text-align:center}
+
+/* overlay */
+.overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.5);visibility:hidden;opacity:0;transition:opacity .2s}
+.overlay.show{visibility:visible;opacity:1}
+.overlay-card{background:var(--card);padding:18px;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,0.03)}
+.overlay-card h2{color:var(--accent);margin:0 0 6px;font-size:20px}
+.overlay-card p{color:var(--muted);margin-bottom:12px}
+
+/* responsive */
+@media(max-width:560px){
+  .map-wrap{grid-template-columns:repeat(2,1fr)}
+  .logo{width:44px;height:44px}
+}
+.light-mode body, .light-mode{background:var(--light-bg);color:var(--dark-text)}
+.light-mode .panel{background:#fff;border:1px solid rgba(0,0,0,0.06);box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+.light-mode .btn{background:#0B8A3E}
